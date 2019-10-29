@@ -5,7 +5,7 @@ SOURCE=main.cpp
 OUT=main
 
 all:
-	$(CC) $(CFLAGS) $(CLIB) -o $(OUT) $(SOURCE)
+	$(CC) $(SOURCE) $(CFLAGS) $(CLIB) -o $(OUT)
 
 run: all
 	./$(OUT) 
