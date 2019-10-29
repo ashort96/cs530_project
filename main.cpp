@@ -46,7 +46,7 @@ static void BM_StringCompare(benchmark::State& state) {
 }
 
 
-BENCHMARK(BM_memcpy)->RangeMultiplier(2)->Range(1, 1<<16);
+BENCHMARK(BM_memcpy)->RangeMultiplier(2)->Range(1, 1<<30);
 // BENCHMARK(BM_StringCompare)
 //     ->RangeMultiplier(2)->Range(1<<10, 1<<18)->Complexity();
 
