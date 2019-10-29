@@ -4,19 +4,25 @@
 #include <benchmark/benchmark.h>
 
 
-static void BM_StringCreation(benchmark::State& state)
-{
-    for (auto _ : state)
-        std::string empty_string;
-}
+// static void BM_StringCreation(benchmark::State& state)
+// {
+//     for (auto _ : state)
+//         std::string empty_string;
+// }
 
-static void BM_StringCopy(benchmark::State& state) {
-  std::string x = "hello";
-  for (auto _ : state)
-    std::string copy(x);
-}
+// static void BM_StringCopy(benchmark::State& state) {
+//   std::string x = "hello";
+//   for (auto _ : state)
+//     std::string copy(x);
+// }
 
-
+// static void BM_DenseRange(benchmark::State& state) {
+//   for(auto _ : state) {
+//     std::vector<int> v(state.range(0), state.range(0));
+//     benchmark::DoNotOptimize(v.data());
+//     benchmark::ClobberMemory();
+//   }
+// }
 
 static void BM_memcpy(benchmark::State& state) {
   char* src = new char[state.range(0)];
@@ -40,10 +46,8 @@ static void BM_StringCompare(benchmark::State& state) {
 }
 
 
-BENCHMARK(BM_StringCreation);
-BENCHMARK(BM_StringCopy);
-BENCHMARK(BM_memcpy)->RangeMultiplier(2)->Range(8, 8<<10);
-BENCHMARK(BM_StringCompare)
-    ->RangeMultiplier(2)->Range(1<<10, 1<<18)->Complexity();
+BENCHMARK(BM_memcpy)->RangeMultiplier(2)->Range(1, 1<<16);
+// BENCHMARK(BM_StringCompare)
+//     ->RangeMultiplier(2)->Range(1<<10, 1<<18)->Complexity();
 
 BENCHMARK_MAIN();
