@@ -8,7 +8,8 @@ all:
 	$(CC) $(CFLAGS) $(CLIB) -o $(OUT) $(SOURCE)
 
 run: all
-	./$(OUT)
+	./$(OUT) 
 
 .PHONY: clean
+clean:
 	rm -f $(OUT)
