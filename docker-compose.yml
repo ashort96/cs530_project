@@ -1,0 +1,6 @@
+version: '2.1'
+
+services:
+  cs530_project:
+    image: cs530_project
+    build: .
