@@ -10,6 +10,10 @@ all:
 run: all
 	./$(OUT) 
 
+docker-build:
+	docker build --rm -f "Dockerfile" -t cs530_project:latest .
+
+
 .PHONY: clean
 clean:
 	rm -f $(OUT)
