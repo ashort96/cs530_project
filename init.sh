@@ -15,7 +15,7 @@ mkdir benchmark/build
 cd benchmark/build && cmake -DCMAKE_BUILD_TYPE=Release ../
 make -j8
 
-# if [ "$1" == "DOCKER" ]; then
-#     cd /usr/src/app
-#     make run
-# fi
+if [ "$1" == "DOCKER" ]; then
+    cd /usr/src/app
+    make run
+fi
