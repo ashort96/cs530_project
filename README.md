@@ -1,6 +1,6 @@
 # cs530_project
 
-Code by Adam Short and Rachel Offut
+Code by Adam Short and Rachel Offutt
 
 ## Initial Setup
 Run init.sh. This should be all you need to do to build Google's Benchmark Library.
